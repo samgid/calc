@@ -40,7 +40,7 @@
     </dependencies>
 <!-- test1 trigger -->
 <properties>
- <project.scm.id>my-scm-server<project.scm.id>
+ <project.scm.id>my-scm-server</project.scm.id>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 </properties>
     <build>
