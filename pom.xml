@@ -87,6 +87,39 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <version>2.1.5</version>
+        <executions>
+          <execution>
+            <id>attach-rpm</id>
+            <goals>
+              <goal>attached-rpm</goal>
+            </goals>
+          </execution>
+        </executions>
+          <configuration>
+          <license>GPL (c) 2005, SWWDC</license>
+          <distribution>Gidi</distribution>
+          <group>Application/Collectors</group>      
+          <packager>gidi</packager>
+          <description>Test calculatur</description>
+             <mappings>
+               <mapping>
+                <directory>/opt/calc</directory>
+                <username>root</username>
+                <sources>
+                    <source> 
+                       <location>target/taboola_test-${project.version}.jar</location>
+                       <destination>calc.jar</destination>
+                    </source>
+               </sources>
+              </mapping>
+            </mappings>
+          </configuration>
+        </plugin>
+            
    	 <plugin>
            <groupId>org.apache.maven.plugins</groupId>
            <artifactId>maven-release-plugin</artifactId>
