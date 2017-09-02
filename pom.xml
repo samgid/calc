@@ -131,6 +131,16 @@
                     </source>
                </sources>
               </mapping>
+		     <mapping>
+                <directory>/opt/calc/lib</directory>
+		<filemode>777</filemode>
+                <username>root</username>
+                <sources>
+                    <source> 
+                       <location>${project.build.directory}/lib</location>
+                    </source>
+               </sources>
+              </mapping>
 		<mapping>
                 <directory>/opt/calc</directory>
 		<filemode>777</filemode>
