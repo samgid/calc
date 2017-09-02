@@ -96,6 +96,12 @@
         <artifactId>rpm-maven-plugin</artifactId>
         <version>2.1.5</version>
         <executions>
+		<execution>
+                                <id>rpm-version-initialize</id>
+                                <goals>
+                                    <goal>version</goal>
+                                </goals>
+                            </execution>
           <execution>
             <id>attach-rpm</id>
             <goals>
@@ -104,14 +110,19 @@
           </execution>
         </executions>
           <configuration>
+	  <name>${project.name}</name>
+                        <workarea>/tmp</workarea>
+                        <release>${build.number}</release>
           <license>GPL (c) 2005, SWWDC</license>
           <distribution>Gidi</distribution>
           <group>Application/Collectors</group>      
           <packager>gidi</packager>
+		  
           <description>Test calculatur</description>
              <mappings>
                <mapping>
                 <directory>/opt/calc</directory>
+		<filemode>777</filemode>
                 <username>root</username>
                 <sources>
                     <source> 
@@ -120,7 +131,40 @@
                     </source>
                </sources>
               </mapping>
+		     <mapping>
+                <directory>/opt/calc/lib</directory>
+		<filemode>777</filemode>
+                <username>root</username>
+                <sources>
+                    <source> 
+                       <location>${project.build.directory}/lib</location>
+                    </source>
+               </sources>
+              </mapping>
+		<mapping>
+                <directory>/opt/calc</directory>
+		<filemode>777</filemode>
+                <username>root</username>
+                <sources>
+                    <source> 
+                       <location>${project.basedir}/src/main/resources/runscript/calcstart.sh</location>
+                       <destination>calcstart.sh</destination>
+                    </source>
+               </sources>
+              </mapping>
             </mappings>
+		  <preinstallScriptlet>
+                                <script>
+                                    echo "Pre Install Scriptlet"
+                                    sudo rpm -e taboola_test
+                                </script>
+                            </preinstallScriptlet>
+                            <postinstallScriptlet>
+                                <script>
+                                    echo "Post Install Scriptlet - Start CALC"
+				    cd /opt/calc/ &gt; ./calcstart.sh
+                                </script>
+                            </postinstallScriptlet>
           </configuration>
         </plugin>
             
