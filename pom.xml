@@ -88,6 +88,7 @@
                 </executions>
             </plugin>
             <plugin>
+	<!-- pack the project as an RPM, which creates a “calc” command which runs the CLI -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>rpm-maven-plugin</artifactId>
         <version>2.1.5</version>
