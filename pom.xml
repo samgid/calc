@@ -4,7 +4,7 @@
 
     <groupId>taboola_test</groupId>
     <artifactId>taboola_test</artifactId>
-    <version>1.5-SNAPSHOT-</version>
+    <version>1.5-SNAPSHOT</version>
     <scm>
        <developerConnection>scm:git:git:@github.com:samgid/calc.git</developerConnection>
   </scm>
