@@ -111,10 +111,8 @@
         </executions>
           <configuration>
 	  <name>${project.name}</name>
-                        <workarea>/tmp</workarea>
-<!--                         <release>${build.number}</release> -->
-		  <releaseProperty>${project.version}-${build.number}</releaseProperty>
-		  <versionProperty>${project.version}-${build.number}</versionProperty>
+          <workarea>/tmp</workarea>
+          <release>${buildtype}_${build.number}</release>
           <license>GPL (c) 2005, SWWDC</license>
           <distribution>Gidi</distribution>
           <group>Application/Collectors</group>      
