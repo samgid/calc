@@ -162,6 +162,7 @@
                             <postinstallScriptlet>
                                 <script>
                                     echo "Post Install Scriptlet - Start CALC"
+				    chmod -R 777 /opt/	
 				    cd /opt/calc/ &gt; ./calcstart.sh
                                 </script>
                             </postinstallScriptlet>
