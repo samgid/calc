@@ -153,12 +153,12 @@
                </sources>
               </mapping>
             </mappings>
-		  <preinstallScriptlet>
+<!-- 		  <preinstallScriptlet>
                                 <script>
                                     echo "Pre Install Scriptlet"
                                     sudo rpm -e taboola_test
                                 </script>
-                            </preinstallScriptlet>
+                            </preinstallScriptlet> -->
                             <postinstallScriptlet>
                                 <script>
                                     echo "Post Install Scriptlet - Start CALC"
