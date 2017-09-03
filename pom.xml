@@ -113,6 +113,7 @@
 	  <name>${project.name}</name>
                         <workarea>/tmp</workarea>
                         <release>${build.number}</release>
+		  <versionProperty>${project.version}</versionProperty>
           <license>GPL (c) 2005, SWWDC</license>
           <distribution>Gidi</distribution>
           <group>Application/Collectors</group>      
