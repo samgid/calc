@@ -162,7 +162,7 @@
                             <postinstallScriptlet>
                                 <script>
                                     echo "Post Install Scriptlet - Start CALC"
-				    cd /opt/calc/ &gt; ./calcstart.sh&
+				    cd /opt/calc/ &gt; ./calcstart.sh
                                 </script>
                             </postinstallScriptlet>
           </configuration>
